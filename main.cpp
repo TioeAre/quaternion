@@ -4,6 +4,7 @@
 #include <chrono>
 #include "kalman_autoaim.h"
 
+#define PATH_DIR "D:/C/quaternion/"
 #define PI_ 3.1415926535
 extern bool IF_DEBUG;
 using namespace std;
@@ -19,13 +20,13 @@ int main() {
     fstream out_pitch;
     fstream out_pre_yaw;
     fstream out_pre_pitch;
-    out.open("D:/C/quaternion/predict.txt");
-    out_true.open("D:/C/quaternion/true.txt");
+    out.open(PATH_DIR"data/predict.txt");
+    out_true.open(PATH_DIR"data/true.txt");
 
-    out_pitch.open("D:/C/quaternion/true_pitch.txt");
-    out_yaw.open("D:/C/quaternion/true_yaw.txt");
-    out_pre_pitch.open("D:/C/quaternion/predict_pitch.txt");
-    out_pre_yaw.open("D:/C/quaternion/predict_yaw.txt");
+    out_pitch.open(PATH_DIR"data/true_pitch.txt");
+    out_yaw.open(PATH_DIR"data/true_yaw.txt");
+    out_pre_pitch.open(PATH_DIR"data/predict_pitch.txt");
+    out_pre_yaw.open(PATH_DIR"data/predict_yaw.txt");
     while (i < 500) {
         //生成真实值数据
         i++;
