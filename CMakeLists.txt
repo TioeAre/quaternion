@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.10)
+project(quaternion)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_EXE_LINKER_FLAGS "-static")
+set( EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
+include_directories(${CMAKE_SOURCE_DIR}/include)
+set(EIGEN3_INCLUDE_DIRS "D:/Visual Studio/eigen-3.4.0/Eigen")
+include_directories(${EIGEN3_INCLUDE_DIRS})
+aux_source_directory(. DIR_SRCS)
+aux_source_directory(${CMAKE_SOURCE_DIR}/src SRCS)
+
+add_executable(quaternion ${DIR_SRCS} ${SRCS})
