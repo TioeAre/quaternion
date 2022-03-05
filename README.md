@@ -18,7 +18,7 @@
 
 本文中的坐标系与云台IMU所定义的右手坐标系相同以便于日后可能移植到电控的程序中，坐标系如下：
 
-![屏幕截图 2022-03-03 223735](C:\Users\TioeAre\桌面\屏幕截图 2022-03-03 223735.jpg)
+![屏幕截图 2022-03-03 223735](.\media\屏幕截图 2022-03-03 223735.jpg)
 
 设绕$z$轴旋转角度为偏航角$yaw(\psi)$，绕$x$轴旋转角度为俯仰角$pitch(\phi)$，绕$y$轴旋转角度为翻滚角$roll(\varphi)$。
 
@@ -110,7 +110,7 @@ $g'(Q)=2*a+2*b+2*c+2*d$
 
 #### 四、滤波流程
 
-![image-20220305204147560](C:\Users\TioeAre\AppData\Roaming\Typora\typora-user-images\image-20220305204147560.png)
+![image-20220305204147560](.\media\屏幕截图 2022-02-21 162307.jpg)
 
 #### 五、测试
 
@@ -120,7 +120,7 @@ $g'(Q)=2*a+2*b+2*c+2*d$
 
 对$yaw$轴滤波效果如下：
 
-![yaw](C:\Users\TioeAre\桌面\yaw.jpg)
+![yaw](D:\C\quaternion\media\yaw.jpg)
 
 横轴为滤波次数，纵轴为$yaw$轴角度。蓝色曲线为$yaw$轴的真实值，红色曲线为对$yaw$轴的预测值。
 
@@ -128,7 +128,7 @@ $g'(Q)=2*a+2*b+2*c+2*d$
 
 对$pitch$轴滤波效果如下：
 
-![pitch](C:\Users\TioeAre\桌面\pitch.jpg)
+![pitch](D:\C\quaternion\media\pitch.jpg)
 
 横轴为滤波次数，纵轴为$pitch$轴角度。蓝色曲线为$pitch$轴的真实值，红色曲线为对$pitch$轴的预测值。
 
