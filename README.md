@@ -66,7 +66,7 @@ $\begin{bmatrix}cos(\psi)*cos(\varphi)-sin(\psi)*sin(\phi)*sin(\varphi)&-sin(\ps
 
 由欧拉角所得的旋转矩阵与四元数所得的旋转矩阵的对应关系可得：
 
-$\phi=acrsin(2*c*d+2*a*b)$
+$\phi=arcsin(2*c*d+2*a*b)$
 
 $\varphi=-arctan(\frac{2*b*d-2*a*c}{a^2-b^2-c^2+d^2})$
 
