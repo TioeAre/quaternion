@@ -172,10 +172,10 @@ void EKF_autoaim::return_pitch_yaw(double &pitch, double &yaw) {
             cout << "return_:\n" << return_ << endl;
         }
 
-        yaw = atan2(2 * (return_(2) * return_(3) - return_(0) * return_(1)),
+        yaw = atan2(2 * return_(0) * return_(1) - (return_(2) * return_(3)),
                     (return_(0) * return_(0) - return_(1) * return_(1) - return_(2) * return_(2) +
                      return_(3) * return_(3)));
-        pitch = asin(-2 * (return_(0) * return_(2) + return_(1) * return_(3)));
+        pitch = asin(2 * (return_(0) * return_(2) + return_(1) * return_(3)));
         yaw = yaw * 180 / PI;
         pitch = pitch * 180 / PI;
     }

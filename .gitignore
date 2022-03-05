@@ -1,3 +1,10 @@
+predict.txt
+predict_pitch.txt
+predict_yaw.txt
+true.txt
+true_pitch.txt
+true_yaw.txt
+.idea
 ### C++ template
 # Prerequisites
 *.d
