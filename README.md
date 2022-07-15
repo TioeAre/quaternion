@@ -48,7 +48,7 @@ $d=cos(\frac{\phi}{2})*cos(\frac{\varphi}{2})*sin(\frac{\psi}{2})+sin(\frac{\phi
 
 设欧拉角旋转形式为内旋
 
-绕$x$轴旋转的旋转矩阵$R_x$为$\begin{bmatrix}1&0&0 \\0&cos(\phi)&-sin(\phi) \\ 0&sin(\phi)&cos(\phi) \end{bmatrix}$
+绕$x$轴旋转的旋转矩阵$R_x$为$\begin{bmatrix}1&0&0 \\ 0&cos(\phi)&-sin(\phi) \\ 0&sin(\phi)&cos(\phi) \end{bmatrix}$
 
 绕$y$轴旋转的旋转矩阵$R_y$为$\begin{bmatrix}cos(\varphi)&0&sin(\varphi) \\ 0&1&0 \\ -sin(\varphi)&0&cos(\varphi) \end{bmatrix}$
 
