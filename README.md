@@ -26,87 +26,87 @@
 
 欧拉角所对应的三维旋转角度$\alpha$，相应四元数在四维空间中旋转角度$\beta$，则$\alpha=2*\beta$。
 
-设四元数$q=\begin{bmatrix}a&b*i&c*j&d*k\end{bmatrix}$，
+设四元数$$q=\begin{bmatrix}a&b*i&c*j&d*k\end{bmatrix}$$，
 
-$q_x=\begin{bmatrix}cos(\frac{\phi}{2})&sin(\frac{\phi}{2})&0&0\end{bmatrix}$
+$$q_x=\begin{bmatrix}cos(\frac{\phi}{2})&sin(\frac{\phi}{2})&0&0\end{bmatrix}$$
 
-$q_y=\begin{bmatrix}cos(\frac{\varphi}{2})&0&sin(\frac{\phi}{2})&0\end{bmatrix}$
+$$q_y=\begin{bmatrix}cos(\frac{\varphi}{2})&0&sin(\frac{\phi}{2})&0\end{bmatrix}$$
 
-$q_z=\begin{bmatrix}cos(\frac{\psi}{2})&0&0&sin(\frac{\psi}{2})\end{bmatrix}$，则：$q=z\times {x}\times{y}$，
+$$q_z=\begin{bmatrix}cos(\frac{\psi}{2})&0&0&sin(\frac{\psi}{2})\end{bmatrix}$$，则：$$q=z\times {x}\times{y}$$，
 
 即：
 
-$a=cos(\frac{\phi}{2})*cos(\frac{\varphi}{2})*cos(\frac{\psi}{2})-sin(\frac{\phi}{2})*sin(\frac{\varphi}{2})*sin(\frac{\psi}{2})$
+$$a=cos(\frac{\phi}{2})*cos(\frac{\varphi}{2})*cos(\frac{\psi}{2})-sin(\frac{\phi}{2})*sin(\frac{\varphi}{2})*sin(\frac{\psi}{2})$$
 
-$b=sin(\frac{\phi}{2})*cos(\frac{\varphi}{2})*cos(\frac{\psi}{2})-cos(\frac{\phi}{2})*sin(\frac{\varphi}{2})*sin(\frac{\psi}{2})$
+$$b=sin(\frac{\phi}{2})*cos(\frac{\varphi}{2})*cos(\frac{\psi}{2})-cos(\frac{\phi}{2})*sin(\frac{\varphi}{2})*sin(\frac{\psi}{2})$$
 
-$c=cos(\frac{\phi}{2})*sin(\frac{\varphi}{2})*cos(\frac{\psi}{2})+sin(\frac{\phi}{2})*cos(\frac{\varphi}{2})*sin(\frac{\psi}{2})$
+$$c=cos(\frac{\phi}{2})*sin(\frac{\varphi}{2})*cos(\frac{\psi}{2})+sin(\frac{\phi}{2})*cos(\frac{\varphi}{2})*sin(\frac{\psi}{2})$$
 
-$d=cos(\frac{\phi}{2})*cos(\frac{\varphi}{2})*sin(\frac{\psi}{2})+sin(\frac{\phi}{2})*sin(\frac{\varphi}{2})*cos(\frac{\psi}{2})$
+$$d=cos(\frac{\phi}{2})*cos(\frac{\varphi}{2})*sin(\frac{\psi}{2})+sin(\frac{\phi}{2})*sin(\frac{\varphi}{2})*cos(\frac{\psi}{2})$$
 
 #### 二、欧拉角转旋转矩阵
 
 设欧拉角旋转形式为内旋
 
-绕$x$轴旋转的旋转矩阵$R_x$为$\begin{bmatrix}1&0&0 \\ 0&cos(\phi)&-sin(\phi) \\ 0&sin(\phi)&cos(\phi) \end{bmatrix}$
+绕$$x$$轴旋转的旋转矩阵$$R_x$$为$$\begin{bmatrix}1&0&0 \\ 0&cos(\phi)&-sin(\phi) \\ 0&sin(\phi)&cos(\phi) \end{bmatrix}$$
 
-绕$y$轴旋转的旋转矩阵$R_y$为$\begin{bmatrix}cos(\varphi)&0&sin(\varphi) \\ 0&1&0 \\ -sin(\varphi)&0&cos(\varphi) \end{bmatrix}$
+绕$$y$$轴旋转的旋转矩阵$$R_y$$为$$\begin{bmatrix}cos(\varphi)&0&sin(\varphi) \\ 0&1&0 \\ -sin(\varphi)&0&cos(\varphi) \end{bmatrix}$$
 
-绕$z$轴旋转的旋转矩阵$R_z$为$\begin{bmatrix}cos(\psi)&-sin(\psi)&0 \\ sin(\psi)&cos(\psi)&0 \\ 0&0&1 \end{bmatrix}$
+绕$$z$$轴旋转的旋转矩阵$$R_z$$为$$\begin{bmatrix}cos(\psi)&-sin(\psi)&0 \\ sin(\psi)&cos(\psi)&0 \\ 0&0&1 \end{bmatrix}$$
 
 欧拉角旋转矩阵为$R_z*R_x*R_y=$
 
-$\begin{bmatrix}cos(\psi)*cos(\varphi)-sin(\psi)*sin(\phi)*sin(\varphi)&-sin(\psi)*cos(\phi)&cos(\psi)*sin(\varphi)+sin(\psi)*sin(\phi)*cos(\varphi) \\ sin(\psi)*cos(\varphi)+cos(\psi)*sin(\phi)*cos(\varphi)&cos(\psi)*cos(\phi)&sin(\psi)*sin(\varphi)-cos(\psi)*sin(\phi)*cos(\varphi) \\ -cos(\phi)*sin(\varphi)&sin(\phi)&cos(\phi)*cos(\varphi) \end{bmatrix}$
+$$\begin{bmatrix}cos(\psi)*cos(\varphi)-sin(\psi)*sin(\phi)*sin(\varphi)&-sin(\psi)*cos(\phi)&cos(\psi)*sin(\varphi)+sin(\psi)*sin(\phi)*cos(\varphi) \\ sin(\psi)*cos(\varphi)+cos(\psi)*sin(\phi)*cos(\varphi)&cos(\psi)*cos(\phi)&sin(\psi)*sin(\varphi)-cos(\psi)*sin(\phi)*cos(\varphi) \\ -cos(\phi)*sin(\varphi)&sin(\phi)&cos(\phi)*cos(\varphi) \end{bmatrix}$$
 
 #### 三、四元数转旋转矩阵
 
-由四元数乘法可得四元数对应旋转矩阵为$\begin{bmatrix}a^2+b^2+c^2+d^2 & 2*b*c-2*a*d&2*b*d+2*a*c\\2*b*c+2*a*d&a^2-b^2+c^2-d^2&2*c*d-2*a*b \\2*b*d-2*a*c&2*c*d+2*a*b&a^2-b^2-c^2+d^2 \end{bmatrix}$
+由四元数乘法可得四元数对应旋转矩阵为$$\begin{bmatrix}a^2+b^2+c^2+d^2 & 2*b*c-2*a*d&2*b*d+2*a*c\\2*b*c+2*a*d&a^2-b^2+c^2-d^2&2*c*d-2*a*b \\2*b*d-2*a*c&2*c*d+2*a*b&a^2-b^2-c^2+d^2 \end{bmatrix}$$
 
 #### 四、四元数转欧拉角
 
 由欧拉角所得的旋转矩阵与四元数所得的旋转矩阵的对应关系可得：
 
-$\phi=arcsin(2*c*d+2*a*b)$
+$$\phi=arcsin(2*c*d+2*a*b)$$
 
-$\varphi=-arctan(\frac{2*b*d-2*a*c}{a^2-b^2-c^2+d^2})$
+$$\varphi=-arctan(\frac{2*b*d-2*a*c}{a^2-b^2-c^2+d^2})$$
 
-$\psi=-arctan(\frac{2*b*c-2*a*d}{a^2-b^2+c^2-d^2})$
+$$\psi=-arctan(\frac{2*b*c-2*a*d}{a^2-b^2+c^2-d^2})$$
 
 ## 滤波器设计
 
 #### 一、获取数据
 
-​	电控发来的当前的$pitch$轴和$yaw$轴数据，由角度结算可得出将要转过的相对角度，再将这两个角度相加后转化为四元数。
+​	电控发来的当前的$$pitch$$轴和$$yaw$$轴数据，由角度结算可得出将要转过的相对角度，再将这两个角度相加后转化为四元数。
 
 #### 二、建立状态方程
 
-设四元数$Q=cos(\frac{\alpha}{2})+sin(\frac{\alpha}{2})*v$，则对该四元数求导可得：
+设四元数$$Q=cos(\frac{\alpha}{2})+sin(\frac{\alpha}{2})*v$$，则对该四元数求导可得：
 
-$\dot{Q}=-sin(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}+v*cos(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}+\dot{v}sin(\frac{\alpha}{2})$
+$$\dot{Q}=-sin(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}+v*cos(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}+\dot{v}sin(\frac{\alpha}{2})$$
 
-$=-sin(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}+v*cos(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}$
+$$=-sin(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}+v*cos(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}$$
 
-$=v\times{v}*\frac{\dot{\alpha}}{2}*sin(\frac{\alpha}{2})+v*cos(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}$
+$$=v\times{v}*\frac{\dot{\alpha}}{2}*sin(\frac{\alpha}{2})+v*cos(\frac{\alpha}{2})*\frac{\dot{\alpha}}{2}$$
 
-$=\frac{\dot{\alpha}}{2}*v*(cos(\frac{\alpha}{2})+sin(\frac{\alpha}{2})*v)$
+$$=\frac{\dot{\alpha}}{2}*v*(cos(\frac{\alpha}{2})+sin(\frac{\alpha}{2})*v)$$
 
-$=\frac{\dot{\alpha}}{2}*v*Q$
+$$=\frac{\dot{\alpha}}{2}*v*Q$$
 
-$=\frac{1}{2}*{\omega}*Q$
+$$=\frac{1}{2}*{\omega}*Q$$
 
-可得$Q_{k}=Q_{k-1}+\frac{1}{2}*\omega*Q_{k-1}*t$
+可得$Q_{k}=Q_{k-1}+\frac{1}{2}*\omega*Q_{k-1}*t$$
 
-$=(I+\frac{1}{2}*\omega*t)*Q_{k-1}$
+$=(I+\frac{1}{2}*\omega*t)*Q_{k-1}$$
 
-$=A*Q_{k-1}$
+$=A*Q_{k-1}$$
 
 #### 三、加入约束条件
 
-由单位四元数性质可得$a^2+b^2+c^2+d^2=1$。
+由单位四元数性质可得$$a^2+b^2+c^2+d^2=1$$。
 
-可得约束条件$g(Q)=1$
+可得约束条件$$g(Q)=1$$
 
-$g'(Q)=2*a+2*b+2*c+2*d$
+$$g'(Q)=2*a+2*b+2*c+2*d$$
 
 #### 四、滤波流程
 
